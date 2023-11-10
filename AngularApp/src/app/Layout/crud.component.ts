@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { Console } from "console";
 
 @Component({
     selector: "crud",
@@ -7,8 +8,11 @@ import { Component } from "@angular/core";
 
 export class Crud
 {
-    emailHandler(event)
+    userData:object[]=[{}];
+    dataHandler(event)
     {
-        
+        ids:String = event.target.value;
+        switch (event)
+        console.log(event.target.id);     
     }
 }
