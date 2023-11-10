@@ -8,11 +8,32 @@ import { Console } from "console";
 
 export class Crud
 {
+    
+    indiData:object={email:" ",password:" ",isReady:false};
     userData:object[]=[{}];
     dataHandler(event)
     {
-        ids:String = event.target.value;
-        switch (event)
-        console.log(event.target.id);     
+        let ids:String = event.target.id;
+        let data:any = event.target.values;
+        switch (ids) 
+        {
+            case "emId":
+            this.indiData.email=data;    
+            break;
+            case "psId":
+            this.indiData.password=data;
+            break;
+            case "chId":
+            this.indiData.isReady=data;
+            break;
+            case "btn1":
+                console.log(this.indiData);
+                this.userData.push(indiData);
+            break;
+            default:
+                break;
+
+        }
+        //console.log(event.target.id);     
     }
 }

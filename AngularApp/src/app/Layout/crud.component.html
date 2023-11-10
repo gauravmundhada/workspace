@@ -9,8 +9,12 @@
       <input type="password" (keyup)="dataHandler($event)" class="form-control" id="psId" placeholder="Password">
     </div>
     <div class="form-check">
-      <input type="checkbox" (click)="dataHandler($event)" class="form-check-input" id="exampleCheck1">
+      <input type="checkbox" (click)="dataHandler($event)" class="form-check-input" id="chId">
       <label class="form-check-label" for="exampleCheck1">Check me out</label>
     </div>
-    <button type="button" (click)="dataHandler($event)" btn btn-primary">Submit</button>
+    <button type="button" id="btn1" (click)="dataHandler($event)" btn btn-primary">Submit</button>
   </form>
+
+ <ol>
+    <li *ngfor="let data of indiData"
+ </ol>
