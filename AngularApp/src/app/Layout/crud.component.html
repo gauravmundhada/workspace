@@ -15,6 +15,10 @@
     <button type="button" id="btn1" (click)="dataHandler($event)" btn btn-primary">Submit</button>
   </form>
 
- <ol>
-    <li *ngfor="let data of indiData"
- </ol>
+ <table>
+    <tr *ngfor="let data of userData">
+    <td>{{data.email}}</td>
+    <td>{{data.password}}</td>
+    <td>{{data.isReady}}</td>
+    </tr>
+ </table>

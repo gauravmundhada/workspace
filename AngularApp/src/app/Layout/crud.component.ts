@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { Console } from "console";
+
 
 @Component({
     selector: "crud",
@@ -18,22 +18,23 @@ export class Crud
         switch (ids) 
         {
             case "emId":
-            this.indiData.email=data;    
+            this.indiData={...this.indiData,email:data};    
             break;
             case "psId":
-            this.indiData.password=data;
+            this.indiData={...this.indiData,password:data};
             break;
             case "chId":
-            this.indiData.isReady=data;
+            this.indiData={...this.indiData,isReady:data};
             break;
             case "btn1":
                 console.log(this.indiData);
-                this.userData.push(indiData);
+                this.userData.push(this.indiData);
+                console.log(this.userData);
             break;
             default:
                 break;
 
         }
-        //console.log(event.target.id);     
+        console.log(event.target.id);     
     }
 }
