@@ -85,7 +85,7 @@ import { Component } from "@angular/core";
             </div>
         </div>
         <div class="col py-3">
-            Content area...
+            <crud></crud>
         </div>
     </div>
 </div>`
@@ -93,5 +93,5 @@ import { Component } from "@angular/core";
 
 export class Sidebar
 {
-    
+
 }
