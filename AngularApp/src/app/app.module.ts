@@ -9,7 +9,8 @@ import { Header } from './Layout/header.component';
 @NgModule({
   declarations: [
     AppComponent,
-    Header
+    Header,
+    Sidebar
   ],
   imports: [
     BrowserModule,
