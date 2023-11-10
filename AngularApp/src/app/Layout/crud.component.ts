@@ -11,10 +11,11 @@ export class Crud
     
     indiData:object={email:" ",password:" ",isReady:false};
     userData:object[]=[{}];
+
     dataHandler(event)
     {
         let ids:String = event.target.id;
-        let data:any = event.target.values;
+        let data:any = event.target.value;
         switch (ids) 
         {
             case "emId":
@@ -24,12 +25,13 @@ export class Crud
             this.indiData={...this.indiData,password:data};
             break;
             case "chId":
+                let chkVal = event.target.checked
             this.indiData={...this.indiData,isReady:data};
             break;
             case "btn1":
-                console.log(this.indiData);
+                //console.log(this.indiData);
                 this.userData.push(this.indiData);
-                console.log(this.userData);
+                //console.log(this.userData);
             break;
             default:
                 break;
