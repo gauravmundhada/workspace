@@ -28,7 +28,7 @@ export class Crud
                 let chkVal = event.target.checked
             this.indiData={...this.indiData,isReady:data};
             break;
-            case "btn1":
+            case "btn1": 
                 //console.log(this.indiData);
                 this.userData.push(this.indiData);
                 //console.log(this.userData);
