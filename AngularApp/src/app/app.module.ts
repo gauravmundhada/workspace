@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { Header } from './Layout/header.component';
 import { Sidebar } from './Layout/sidebar.component';
 import { Crud } from './Layout/crud.component';
+import { NewpipePipe } from './newpipe.pipe';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { Crud } from './Layout/crud.component';
     AppComponent,
     Header,
     Sidebar,
-    Crud
+    Crud,
+    NewpipePipe
     
   ],
   imports: [
