@@ -19,7 +19,14 @@ export class Crud
         switch (ids) 
         {
             case "emId":
-            this.indiData={...this.indiData,email:data};    
+            this.indiData={...this.indiData,email:data}; 
+            if(this.userData.length !=0)
+            {
+                console.log("working...");
+                let value = this.userData.find(x=>x.email == this.indiData.email);
+                this.indiData = {...this.indiData,password:this.indiData.password,isReady:this.indiData.isReady};
+                console.log(value);
+            }   
             break;
             case "psId":
             this.indiData={...this.indiData,password:data};
