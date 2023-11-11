@@ -32,7 +32,13 @@ export class Crud
                 //console.log(this.indiData);
                 this.userData.push(this.indiData);
                 //console.log(this.userData);
+            
             break;
+            case "upbtn":
+                let value = this.userData.find(x=>x.email == this.indiData.email);
+                console.log(value);
+                this.userData.push(this.indiData);
+
             default:
                 break;
 
