@@ -14,8 +14,11 @@ export class Crud
 
     dataHandler(event)
     {
-      
-        console.log(this.indiData);
+        
+       
+       
+       
+        // console.log(this.indiData);
         // let ids:String = event.target.id;
         //let data:any = event.target.value;
         // switch (ids) 
@@ -52,6 +55,6 @@ export class Crud
         //         break;
 
         // }
-        console.log(event.target.id);     
+       // console.log(event.target.id);     
     }
 }

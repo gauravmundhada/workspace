@@ -1,27 +1,31 @@
 <div>
-<form>
-    <div class="form-group">
-      <label for="exampleInputEmail1">Email address</label>
-      <input type="email" (keyup)="dataHandler($event)" class="form-control" id="emId" aria-describedby="emailHelp" placeholder="Enter email">
-      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-    </div>
-    <div class="form-group">
-      <label for="exampleInputPassword1">Password</label>
-      <input type="password" (keyup)="dataHandler($event)" class="form-control" id="psId" placeholder="Password">
-    </div>
-    <div class="form-group form-check">
-      <input type="checkbox" (click)="dataHandler($event)" class="form-check-input" id="chId">
-      <label class="form-check-label" for="exampleCheck1">Check me out</label>
-    </div>
-    <button type="button" id="btn1" (click)="dataHandler($event)"  class="btn btn-primary">Submit</button> ||
-    <button type="button" id="upbtn" (click)="dataHandler($event)"  class="btn btn-primary">Update</button>
-  </form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" [(ngModel)]="email" (keyup)="dataHandler($event)"  class="form-control" id="emId" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" [(ngModel)]="password"  class="form-control" id="psId" placeholder="Password">
+  </div>
+  <!-- <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="text" [(ngModel)]="indiData.password" name="password"  class="form-control" id="demoId" placeholder="Password">
+     {{indiData.password}}
+  </div> -->
+  <div class="form-check">
+    <input type="checkbox"  [(ngModel)]="isReady"  class="form-check-input" id="chId">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="button" id="btn1" (click)="dataHandler($event)" class="btn btn-primary">Submit</button>
+  <button type="button" id="upbtn" (click)="dataHandler($event)" class="btn btn-primary">Update</button>
 
  <table class="table">
-    <tr *ngFor="let data of userData">
-    <td>{{data.email}}</td>
-    <td>{{data.password}}</td>
-    <td>{{data.isReady}}</td>
-    </tr>
+ <tr *ngFor="let data of userData">
+   <td>{{data.email}}</td>
+   <td>{{data.password}}</td>
+   <td>{{data.isReady}}</td>
+ </tr>
  </table>
+  
 </div>

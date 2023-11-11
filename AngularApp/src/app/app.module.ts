@@ -14,6 +14,7 @@ import { Crud } from './Layout/crud.component';
     Header,
     Sidebar,
     Crud
+    
   ],
   imports: [
     BrowserModule,
