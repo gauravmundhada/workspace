@@ -10,7 +10,12 @@ export class HttpDemo{
     _http:HttpClient = null;
     constructor(http:HttpClient){
         this._http = http;
-        this._http.get("http:0.0.0.0:8080/weatherforecast.")
+        this._http.get("https://www.google.com").subscribe((data)=>{
+            console.log(data);
+        },
+        (failure)=>{
+            console.log(failure);
+        });
         
     }
 }
