@@ -8,6 +8,7 @@ import { Sidebar } from './Layout/sidebar.component';
 import { Crud } from './Layout/crud.component';
 import { NewpipePipe } from './newpipe.pipe';
 import { TempForm } from './TemplateForm/demo.templateform';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { TempForm } from './TemplateForm/demo.templateform';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

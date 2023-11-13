@@ -85,7 +85,7 @@ import { Component } from "@angular/core";
             </div>
         </div>
         <div class="col py-3">
-            <crud></crud>
+            <temp-form></temp-form>
         </div>
     </div>
 </div>`
