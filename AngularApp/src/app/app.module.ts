@@ -7,6 +7,7 @@ import { Header } from './Layout/header.component';
 import { Sidebar } from './Layout/sidebar.component';
 import { Crud } from './Layout/crud.component';
 import { NewpipePipe } from './newpipe.pipe';
+import { TempForm } from './TemplateForm/demo.templateform';
 
 
 @NgModule({
@@ -15,7 +16,9 @@ import { NewpipePipe } from './newpipe.pipe';
     Header,
     Sidebar,
     Crud,
-    NewpipePipe
+    NewpipePipe,
+    TempForm
+    
     
   ],
   imports: [
