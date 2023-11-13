@@ -1,9 +1,19 @@
-
 <form #userData="ngForm" (ngSubmit)="submitData(userData)">
+ 
     <input type="text" #fnamelement="ngModel" name="fname" required ngModel/>
-    <div *ngIf="fnamelement isvalid || fnamelement.touched">
-        Name is required
+    <div *ngIf="fnamelement.invalid && fnamelement.touched">
+        Fname is Required.
     </div>
-    <input type="text" name="lname" ngModel/>
+ 
+    <input type="text" #lnamelement="ngModel" name="lname" required ngModel/>
+    <div *ngIf="lnamelement.invalid && lnamelement.touched">
+        Lname is Required.
+    </div>
+
+    <div *ngIf="lnamelement.touched && fnamelement.pristine">
+        Fname is required.
+    </div>
+ 
     <button [disabled]="userData.invalid" class="btn btn-primary" type="submit">Save</button>
+ 
 </form>
