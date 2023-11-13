@@ -10,6 +10,7 @@ import { NewpipePipe } from './newpipe.pipe';
 import { TempForm } from './TemplateForm/demo.templateform';
 import { FormsModule } from '@angular/forms';
 import { HttpDemo } from './DemoClientHttp/demohttp.component';
+import { HttpClientModule } from '@angular/common/http' ;
 
 
 @NgModule({
@@ -28,9 +29,9 @@ import { HttpDemo } from './DemoClientHttp/demohttp.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    Http
+    HttpClientModule
   ],
-  providers: [],
+  providers: [HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
