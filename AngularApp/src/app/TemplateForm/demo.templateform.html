@@ -1,19 +1,38 @@
+{{1000 | currency:'INR'}}
 <form #userData="ngForm" (ngSubmit)="submitData(userData)">
  
     <input type="text" #fnamelement="ngModel" name="fname" required ngModel/>
-    <div *ngIf="fnamelement.invalid && fnamelement.touched">
-        Fname is Required.
-    </div>
- 
-    <input type="text" #lnamelement="ngModel" name="lname" required ngModel/>
-    <div *ngIf="lnamelement.invalid && lnamelement.touched">
-        Lname is Required.
+
+    <div *ngIf="fnamelement.invalid  && fnamelement.touched">
+
+        FName is required
+
     </div>
 
+    <input type="text" #lnamelement="ngModel" name="lname" required ngModel/>
+ 
+    <input type="text" #pattern="ngModel" name="pname" pattern="[\D]" required ngModel/>
+ 
+   
+
+    <div *ngIf="(lnamelement.invalid  && lnamelement.touched)">
+
+        LName is required
+
+    </div>
+
+    <!-- <div *ngIf="(lnamelement.invalid  && lnamelement.touched) && fnamelement.pristine">
+
+        FName is required.
+
+    </div> -->
+
     <div *ngIf="lnamelement.touched && fnamelement.pristine">
-        Fname is required.
+
+        FName is required.
+
     </div>
  
-    <button [disabled]="userData.invalid" class="btn btn-primary" type="submit">Save</button>
- 
+    <button  [disabled]="userData.invalid" class="btn btn-primary" type="submit">Save</button>
+
 </form>
