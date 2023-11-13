@@ -9,6 +9,7 @@ import { Crud } from './Layout/crud.component';
 import { NewpipePipe } from './newpipe.pipe';
 import { TempForm } from './TemplateForm/demo.templateform';
 import { FormsModule } from '@angular/forms';
+import { HttpDemo } from './DemoClientHttp/demohttp.component';
 
 
 @NgModule({
@@ -18,14 +19,16 @@ import { FormsModule } from '@angular/forms';
     Sidebar,
     Crud,
     NewpipePipe,
-    TempForm
+    TempForm,
+    HttpDemo
     
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    Http
   ],
   providers: [],
   bootstrap: [AppComponent]
