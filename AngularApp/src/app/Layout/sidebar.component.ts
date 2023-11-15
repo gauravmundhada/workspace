@@ -85,7 +85,7 @@ import { Component } from "@angular/core";
             </div>
         </div>
         <div class="col py-3">
-            <http-client></http-client>
+            <app-route-component></app-route-component>
         </div>
     </div>
 </div>`
