@@ -10,7 +10,8 @@ import { NewpipePipe } from './newpipe.pipe';
 import { TempForm } from './TemplateForm/demo.templateform';
 import { FormsModule } from '@angular/forms';
 import { HttpDemo } from './DemoClientHttp/demohttp.component';
-import { HttpClientModule } from '@angular/common/http' ;
+import { HttpClientModule } from '@angular/common/http';
+import { RouteComponentComponent } from './route-component/route-component.component' ;
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http' ;
     Crud,
     NewpipePipe,
     TempForm,
-    HttpDemo
+    HttpDemo,
+    RouteComponentComponent
     
     
     
