@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpDemo } from './DemoClientHttp/demohttp.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RouteComponentComponent } from './route-component/route-component.component' ;
+import { HelloWorldService } from './ServiceUtilities/helloworld.service';
 
 
 @NgModule({
@@ -34,7 +35,7 @@ import { RouteComponentComponent } from './route-component/route-component.compo
     FormsModule,
     HttpClientModule
   ],
-  providers: [HttpClientModule],
+  providers: [HttpClientModule,HelloWorldService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
