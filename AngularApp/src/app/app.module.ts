@@ -13,6 +13,7 @@ import { HttpDemo } from './DemoClientHttp/demohttp.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RouteComponentComponent } from './route-component/route-component.component' ;
 import { HelloWorldService } from './ServiceUtilities/helloworld.service';
+import { Guard } from './routerGuard.service';
 
 
 @NgModule({
@@ -35,7 +36,7 @@ import { HelloWorldService } from './ServiceUtilities/helloworld.service';
     FormsModule,
     HttpClientModule
   ],
-  providers: [HttpClientModule,HelloWorldService],
+  providers: [HttpClientModule,HelloWorldService,Guard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
