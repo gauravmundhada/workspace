@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouteComponentComponent } from './route-component/route-component.component' ;
 import { HelloWorldService } from './ServiceUtilities/helloworld.service';
 import { Guard } from './routerGuard.service';
+import { TokenizationComponent } from './tokenization/tokenization.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { Guard } from './routerGuard.service';
     NewpipePipe,
     TempForm,
     HttpDemo,
-    RouteComponentComponent
+    RouteComponentComponent,
+    TokenizationComponent
     
     
     
