@@ -30,7 +30,8 @@ export class ApiConnect{
 
     // To update row
     UpdateData(id:number,data:any){
-
+        let responseData:any = "";
+        
     }
 
     // To delete row
@@ -40,6 +41,6 @@ export class ApiConnect{
 
     // To fetch a list
     GetData(){
-        
+
     }
 }
