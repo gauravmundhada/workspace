@@ -2,7 +2,7 @@ import { Component } from "@angular/core";
 import { ApiConnect } from "./BackEndConnect/backend.service";
 
 @Component({
-    selector:'crud',
+    selector:'crud2',
     templateUrl:'./backend.component.html' 
 })
 
@@ -11,13 +11,16 @@ export class CRUD{
     constructor(private http:ApiConnect){
 
     }
-    nme:string="";
-    location:string="";
-    age:number = 0;
+    EmployeeName:string="";
+    DepartmentId:number= 0;
+    DesignationId:number = 0;
+    Salary:number = 0;
+    JoinDate:string="";
+
 
     handleSave(){
-        let data:object= {nme:this.nme, location:this.location,age:this.age}
-        console.log(this.http.SaveData());
+        let data:object= {EmployeeName:this.EmployeeName,DepartmentId:this.DepartmentId,DesignationId:this.DesignationId,Salary:this.Salary,JoinDate:this.JoinDate}
+        console.log(this.http.SaveData(data));
     }
 
 }

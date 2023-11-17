@@ -86,6 +86,7 @@ import { Component } from "@angular/core";
         </div>
         <div class="col py-3">
             <app-route-component></app-route-component>
+            <crud2></crud2>
         </div>
     </div>
 </div>`

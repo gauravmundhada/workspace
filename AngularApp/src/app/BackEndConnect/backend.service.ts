@@ -18,7 +18,7 @@ export class ApiConnect{
         let httpHeaders:HttpHeaders = new HttpHeaders({
             Accept:'application/json'
         })
-        this.http.post("https://8080-dbfddbbbfbdfefabcaaaceeafebeccaddbefddaf.premiumproject.examly.io/api/Department",data,{headers:httpHeaders})
+        this.http.post("https://8080-dbfddbbbfbdfefabcaaaceeafebeccaddbefddaf.premiumproject.examly.io/api/Employee",data,{headers:httpHeaders})
         .subscribe(res=>{
             responseData=res;
         },
