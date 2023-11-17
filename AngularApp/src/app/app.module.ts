@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouteComponentComponent } from './route-component/route-component.component' ;
 import { HelloWorldService } from './ServiceUtilities/helloworld.service';
 import { Guard } from './routerGuard.service';
+import { CRUD } from './backend.component';
 //import { TokenizationComponent } from './tokenization/tokenization.component';
 
 
@@ -27,7 +28,7 @@ import { Guard } from './routerGuard.service';
     TempForm,
     HttpDemo,
     RouteComponentComponent,
-    TokenizationComponent
+    CRUD
     
     
     

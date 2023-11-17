@@ -18,7 +18,7 @@ export class ApiConnect{
         let httpHeaders:HttpHeaders = new HttpHeaders({
             Accept:'application/json'
         })
-        this.http.post("",data,{headers:httpHeaders})
+        this.http.post("https://8080-dbfddbbbfbdfefabcaaaceeafebeccaddbefddaf.premiumproject.examly.io/api/Department",data,{headers:httpHeaders})
         .subscribe(res=>{
             responseData=res;
         },
@@ -31,7 +31,7 @@ export class ApiConnect{
     // To update row
     UpdateData(id:number,data:any){
         let responseData:any = "";
-        
+
     }
 
     // To delete row
