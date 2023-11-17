@@ -74,7 +74,7 @@ export class ApiConnect{
         return listUserData;
     }
 }
-interface IUserData{
+export interface IUserData{
     username:string;
     password:string;
 }

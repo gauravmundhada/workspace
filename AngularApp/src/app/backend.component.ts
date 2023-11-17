@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { ApiConnect } from "./BackEndConnect/backend.service";
-import { IUserData} from 
+import { IUserData} from "./BackEndConnect/backend.service";
 
 @Component({
     selector:'crud2',
