@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { ApiConnect } from "./BackEndConnect/backend.service";
+import { IUserData} from 
 
 @Component({
     selector:'crud2',
@@ -8,8 +9,9 @@ import { ApiConnect } from "./BackEndConnect/backend.service";
 
 export class CRUD{
 
+    listData:IUserData[] = [{username:'abc',password:'abcd'}];
     constructor(private http:ApiConnect){
-
+        this.listData=this.http.GetData();
     }
     EmployeeName:string="";
     DepartmentId:number= 0;

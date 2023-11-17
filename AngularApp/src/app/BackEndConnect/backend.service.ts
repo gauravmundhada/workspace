@@ -8,8 +8,9 @@ import { HttpHeaders } from "@angular/common/http";
 })
 
 export class ApiConnect{
+   
     constructor(private http:HttpClient){
-
+        
     }
 
     //To create row
@@ -64,15 +65,13 @@ export class ApiConnect{
         let responseData:any = "";
         let httpHeaders:HttpHeaders = new HttpHeaders({
             Accept:'application/json'
-        })
-
-        this.http.get<IUserData>("https://8080-dbfddbbbfbdfefabcaaaceeafebeccaddbefddaf.premiumproject.examly.io/api/Employee",{headers:httpHeaders})
+        })  
+        let listUserData:IUserData[] = [];
+        this.http.get<IUserData[]>("https://8080-dbfddbbbfbdfefabcaaaceeafebeccaddbefddaf.premiumproject.examly.io/api/Employee",{headers:httpHeaders})
         .subscribe(success=>{
-            responseData = success;
-        }, error=>{
-            responseData = error;
+            listUserData = success;
         })
-        return responseData;
+        return listUserData;
     }
 }
 interface IUserData{
