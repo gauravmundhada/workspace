@@ -45,11 +45,37 @@ export class ApiConnect{
 
     // To delete row
     DeleteData(id:number){
+        let responseData:any = "";
+        let httpHeaders:HttpHeaders = new HttpHeaders({
+            Accept:'application/json'
+        })
 
+        this.http.delete("https://8080-dbfddbbbfbdfefabcaaaceeafebeccaddbefddaf.premiumproject.examly.io/api/Employee"+id,{headers:httpHeaders})
+        .subscribe(success=>{
+            responseData = success;
+        }, error=>{
+            responseData = error;
+        })
+        return responseData;
     }
 
     // To fetch a list
     GetData(){
+        let responseData:any = "";
+        let httpHeaders:HttpHeaders = new HttpHeaders({
+            Accept:'application/json'
+        })
 
+        this.http.get<IUserData>("https://8080-dbfddbbbfbdfefabcaaaceeafebeccaddbefddaf.premiumproject.examly.io/api/Employee",{headers:httpHeaders})
+        .subscribe(success=>{
+            responseData = success;
+        }, error=>{
+            responseData = error;
+        })
+        return responseData;
     }
+}
+interface IUserData{
+    username:string;
+    password:string;
 }
