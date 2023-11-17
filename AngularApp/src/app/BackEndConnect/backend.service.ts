@@ -31,6 +31,15 @@ export class ApiConnect{
     // To update row
     UpdateData(id:number,data:any){
         let responseData:any = "";
+        let httpHeaders:HttpHeaders = new HttpHeaders({
+            Accept:'application/json'
+        }) 
+        this.http.put("https://8080-dbfddbbbfbdfefabcaaaceeafebeccaddbefddaf.premiumproject.examly.io/api/Employee",data,{headers:httpHeaders})
+        .subscribe(success=>{
+            responseData = success;
+        }, error=>{
+            responseData = error;
+        })
 
     }
 
