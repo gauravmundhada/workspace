@@ -1,3 +1,15 @@
 <div>
-    <input [(ngModel)]="name" type
+    <p>Enter Name</p>
+    <input [(ngModel)]="name" type="text">
+</div>
+<div>
+    <p>Enter Location</p>
+    <input [(ngModel)]="location" type="text">
+</div>
+<div>
+    <p>Enter Age</p>
+    <input [(ngModel)]="age" type="text">
+</div>
+<div>
+    <button (click)="handleSave()">Save</button>
 </div>
