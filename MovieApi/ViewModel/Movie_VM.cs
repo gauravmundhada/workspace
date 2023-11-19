@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
  
-namespace MovieAppapi.ViewModel;
+namespace MovieApi.ViewModel;
  
 public class Movie_VM
 {
