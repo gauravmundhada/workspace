@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using MovieApi.Models;
  
  
-namespace MovieAppapi.Controllers
+namespace MovieApi.Controllers
 {
     [ApiController]
     [Route("/[controller]")]

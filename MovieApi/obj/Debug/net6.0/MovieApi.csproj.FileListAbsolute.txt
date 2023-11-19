@@ -1,0 +1,14 @@
+/home/coder/project/workspace/MovieApi/obj/Debug/net6.0/MovieApi.csproj.AssemblyReference.cache
+/home/coder/project/workspace/MovieApi/obj/Debug/net6.0/MovieApi.GeneratedMSBuildEditorConfig.editorconfig
+/home/coder/project/workspace/MovieApi/obj/Debug/net6.0/MovieApi.AssemblyInfoInputs.cache
+/home/coder/project/workspace/MovieApi/obj/Debug/net6.0/MovieApi.AssemblyInfo.cs
+/home/coder/project/workspace/MovieApi/obj/Debug/net6.0/MovieApi.csproj.CoreCompileInputs.cache
+/home/coder/project/workspace/MovieApi/obj/Debug/net6.0/MovieApi.MvcApplicationPartsAssemblyInfo.cs
+/home/coder/project/workspace/MovieApi/obj/Debug/net6.0/MovieApi.MvcApplicationPartsAssemblyInfo.cache
+/home/coder/project/workspace/MovieAppapi/obj/Debug/net6.0/MovieApi.csproj.AssemblyReference.cache
+/home/coder/project/workspace/MovieAppapi/obj/Debug/net6.0/MovieApi.GeneratedMSBuildEditorConfig.editorconfig
+/home/coder/project/workspace/MovieAppapi/obj/Debug/net6.0/MovieApi.AssemblyInfoInputs.cache
+/home/coder/project/workspace/MovieAppapi/obj/Debug/net6.0/MovieApi.AssemblyInfo.cs
+/home/coder/project/workspace/MovieAppapi/obj/Debug/net6.0/MovieApi.csproj.CoreCompileInputs.cache
+/home/coder/project/workspace/MovieAppapi/obj/Debug/net6.0/MovieApi.MvcApplicationPartsAssemblyInfo.cs
+/home/coder/project/workspace/MovieAppapi/obj/Debug/net6.0/MovieApi.MvcApplicationPartsAssemblyInfo.cache

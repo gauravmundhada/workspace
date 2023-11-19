@@ -10,7 +10,7 @@ using MovieApi.ViewModel;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
  
-namespace MovieAppapi.Controllers
+namespace MovieApi.Controllers
 {
     [ApiController]
     [Route("/[controller]")]
