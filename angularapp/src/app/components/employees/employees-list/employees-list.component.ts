@@ -13,7 +13,7 @@ export class EmployeesListComponent implements OnInit {
     name: 'Gaurav',
     email: 'gaurav@gmail.com',
     phone: 8530919002,
-    salary: 578584,
+    salary: 67000,
     department: 'Banking'
   },
   {
@@ -21,7 +21,7 @@ export class EmployeesListComponent implements OnInit {
     name: 'Sarang',
     email: 'sarang@gmail.com',
     phone: 8600712770,
-    salary: 57858400,
+    salary: 500000,
     department: 'BusinessMan'    
   },
   {
@@ -29,7 +29,7 @@ export class EmployeesListComponent implements OnInit {
     name: 'Dinesh',
     email: 'dinesh@gmail.com',
     phone: 6585748545,
-    salary: 2478765,
+    salary: 3499999,
     department: 'Coder'  
   }];
   
