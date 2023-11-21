@@ -27,10 +27,10 @@ export class EmployeesListComponent implements OnInit {
   {
     id: 'qaz125',
     name: 'Dinesh',
-    email: 'sarang@gmail.com',
-    phone: 8600712770,
-    salary: 57858400,
-    department: 'BusinessMan'  
+    email: 'dinesh@gmail.com',
+    phone: 6585748545,
+    salary: 2478765,
+    department: 'Coder'  
   }];
   
   constructor() { }
