@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using API.Data;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace API.Controllers
 {
@@ -18,9 +20,10 @@ namespace API.Controllers
         }
          
         [HttpGet]
-        public IActionResult GetAllEmployees()
+        public async Task<IActionResult> GetAllEmployees()
         {
-
+            var employees = await _context.Employees.ToListAsync();
+            return Ok(employees);
         }
     }
 }
