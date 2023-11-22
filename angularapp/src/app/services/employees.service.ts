@@ -33,6 +33,6 @@ export class EmployeesService {
 
   deleteEmployee(id: string):Observable<Employee>
   {
-    return this.http.delete<Employee>()
+    return this.http.delete<Employee>(this.url + '/api/Employee/' + id);
   }
 }

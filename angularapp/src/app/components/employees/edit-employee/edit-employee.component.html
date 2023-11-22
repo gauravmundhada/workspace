@@ -35,7 +35,8 @@
                     <input type="text" class="form-control" id="department"
                     name="department" [(ngModel)]="employeeDetails.department">
                   </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Submit</button> ||
+                <button type="button" class="btn btn-danger" (click)="deleteEmployee(this.employeeDetails.id)">Delete</button>
               </form>
         </div>
     </div>    
