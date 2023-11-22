@@ -53,14 +53,22 @@ namespace API.Controllers
         [Route("{id}")]
         public async Task<IActionResult> UpdateEmployee(string id, Employee updateEmployeeRequest)
         {
-            var employee = await _context.Employees.Find(id);
+            var employee = await _context.Employees.FindAsync(id);
 
             if(employee==null)
             {
                 return NotFound();
             }
 
-            employee.Name = updateEmployeeRequestName
+            employee.Name = updateEmployeeRequest.Name;
+            employee.Email = updateEmployeeRequest.Email;
+            employee.Phone = updateEmployeeRequest.Phone;
+            employee.Salary = updateEmployeeRequest.Salary;
+            employee.Department = updateEmployeeRequest.Department;
+
+            await _context.SaveChangesAsync();
+            return Ok(employee);
+            
         }
     }
 }

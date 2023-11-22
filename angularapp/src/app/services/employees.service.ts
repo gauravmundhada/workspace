@@ -25,4 +25,9 @@ export class EmployeesService {
   {
     return this.http.get<Employee>(this.url + '/api/Employee/' + id);
   }
+
+  updateEmployee(id: string, updateEmployeeRequest: Employee):Observable<Employee>
+  {
+    return this.http.put<Employee>(this.url + '/api/Employee/' + id, updateEmployeeRequest);
+  }
 }
