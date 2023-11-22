@@ -13,8 +13,8 @@ export class EmployeesListComponent implements OnInit {
   
   constructor(private employeeService: EmployeesService)
    { 
-    this.employeeService.getAllEmployees().subscribe(data=>{this.employees.push(...data)})
-    console.log(this.employees)
+    this.employeeService.getAllEmployees().subscribe(data=>{this.employees=data})
+    // console.log(this.employees)
   }
 
   ngOnInit(){
