@@ -4,7 +4,7 @@
     
     <div class="row">
         <div class="col-6">
-            <form #form="ngForm">
+            <form #form="ngForm" (ngSubmit)="updateEmployee(form)">
                 <div class="mb-3">
                     <label  class="form-label">ID</label>
                     <input type="text" class="form-control" id="id" 
@@ -12,7 +12,7 @@
                   </div>
                 <div class="mb-3">
                   <label  class="form-label">Name</label>
-                  <input type="text" class="form-control" id="name" 
+                  <input type="text" class="form-control" id="name"  
                   name="name" [(ngModel)]="employeeDetails.name">
                 </div>
                 <div class="mb-3">
@@ -33,7 +33,7 @@
                   <div class="mb-3">
                     <label  class="form-label">Department</label>
                     <input type="text" class="form-control" id="department"
-                    name="department" [(ngModel)]="addEmployeeRequest.department">
+                    name="department" [(ngModel)]="employeeDetails.department">
                   </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
               </form>
