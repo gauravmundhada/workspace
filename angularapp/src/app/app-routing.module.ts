@@ -7,8 +7,7 @@ import { EditEmployeeComponent } from './components/employees/edit-employee/edit
 
 const routes: Routes = [
   {
-    path: '',
-    component: EmployeesListComponent
+    path: '/player'
   },
   {
     path: 'employees',
