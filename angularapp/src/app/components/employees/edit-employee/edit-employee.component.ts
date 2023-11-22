@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { EmployeesService } from 'src/app/services/employees.service';
+import { Employee } from 'src/app/model/employee.model';
 
 @Component({
   selector: 'app-edit-employee',
@@ -8,7 +10,16 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class EditEmployeeComponent implements OnInit {
 
-  constructor(private route:ActivatedRoute) { }
+  employeeDetails: Employee ={
+    id: '',
+    name: '',
+    email: '',
+    phone: 0,
+    salary: 0, 
+    department:''
+  }
+  
+  constructor(private route:ActivatedRoute,  private employeeService: EmployeesService) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe({
@@ -18,6 +29,12 @@ export class EditEmployeeComponent implements OnInit {
         if(id)
         {
           // call api
+          this.employeeService.getEmployee(id)
+          .subscribe({
+            next: (response)=>{
+              this.employeeDetails = response;
+            }
+          });
         }
       }
     })

@@ -1,6 +1,6 @@
 import { HttpClient,HttpHeaders} from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, ObservableInput } from 'rxjs';
 import { Employee } from '../model/employee.model';
 
 @Injectable({
@@ -19,5 +19,10 @@ export class EmployeesService {
   addEmployee(addEmployeeRequest:Employee):Observable<Employee>
   {
     return this.http.post<Employee>(this.url + '/api/Employee', addEmployeeRequest);
+  }
+
+  getEmployee(id: string):Observable<Employee>
+  {
+    return this.http.get<Employee>(this.url + '/api/Employee/' + id);
   }
 }

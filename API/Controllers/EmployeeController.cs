@@ -40,7 +40,27 @@ namespace API.Controllers
         [Route("{id}")]
         public async Task<IActionResult> GetEmployee(string id)
         {
-            var employee _context.Employees.FirstOrDefaultAsync(x=>x.Id==id);
+            var employee = await _context.Employees.FirstOrDefaultAsync(x=>x.Id==id);
+
+            if(employee==null)
+            {
+                return NotFound();
+            }
+            return Ok(employee);
+        }
+
+        [HttpPut]
+        [Route("{id}")]
+        public async Task<IActionResult> UpdateEmployee(string id, Employee updateEmployeeRequest)
+        {
+            var employee = await _context.Employees.Find(id);
+
+            if(employee==null)
+            {
+                return NotFound();
+            }
+
+            employee.Name = updateEmployeeRequestName
         }
     }
 }
