@@ -21,6 +21,7 @@ namespace API.Controllers
         }
          
         [HttpGet]
+        // [Route("ListEmp")]
         public async Task<IActionResult> GetAllEmployees()
         {
             var employees = await _context.Employees.ToListAsync();
@@ -33,6 +34,13 @@ namespace API.Controllers
             await _context.AddAsync(employeeRequest);
             await _context.SaveChangesAsync();
             return Ok(employeeRequest);
+        }
+
+        [HttpGet]
+        [Route("{id}")]
+        public async Task<IActionResult> GetEmployee(string id)
+        {
+            var employee _context.Employees.FirstOrDefaultAsync(x=>x.Id==id);
         }
     }
 }

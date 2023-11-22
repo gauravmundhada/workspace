@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using API.Data;
-using API.Models;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +15,15 @@ builder.Services.AddDbContext<EmployeeDbContext>(options =>{
     options.UseSqlServer(builder.Configuration.GetConnectionString("DevConnection"));
 });
 
+builder.Services.AddCors(
+    option =>
+    {
+        option.AddDefaultPolicy(builder =>
+        {
+            builder.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
+        });
+    });
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -25,6 +34,9 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseRouting();
+app.UseCors();
 
 app.UseAuthorization();
 
