@@ -70,5 +70,23 @@ namespace API.Controllers
             return Ok(employee);
             
         }
+
+        [HttpDelete]
+        [Route("{id}")]
+        public async Task<IActionResult> DeleteEmployee(string id)
+        {
+            var employee = await _context.Employees.FindAsync(id);
+
+            if(employee==null)
+            {
+                return NotFound();
+            }
+
+            _context.Employees.Remove(employee);
+            await _context.SaveChangesAsync();
+
+            return Ok(employee);
+
+        }
     }
 }

@@ -30,4 +30,9 @@ export class EmployeesService {
   {
     return this.http.put<Employee>(this.url + '/api/Employee/' + id, updateEmployeeRequest);
   }
+
+  deleteEmployee(id: string):Observable<Employee>
+  {
+    return this.http.delete<Employee>()
+  }
 }
