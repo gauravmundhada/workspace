@@ -7,6 +7,7 @@ using Authen.Models;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using System.IdentityModel.Tokens.Jwt;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Authen.Controllers
 {
@@ -46,7 +47,19 @@ namespace Authen.Controllers
             //Login Method
             [AllowAnonymous]
             [HttpPost]
-            
+
+            public IActionResult Login(Users user)
+            {
+                IActionResult response = Unauthorized();
+                var user_ = AuthenticateUser(user);
+                if(user_ != null)
+                {
+                    var token = GenerateToken(user_);
+                    response = Ok( new { token = token }); 
+                }
+                return response;
+            }
+
             
         }
     }
