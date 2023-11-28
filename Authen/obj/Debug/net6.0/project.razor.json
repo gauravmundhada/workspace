@@ -1,6 +1,6 @@
 {
-  "SerializedFilePath": "/home/coder/project/workspace/API/obj/Debug/net6.0/project.razor.json",
-  "FilePath": "/home/coder/project/workspace/API/API.csproj",
+  "SerializedFilePath": "/home/coder/project/workspace/Authen/obj/Debug/net6.0/project.razor.json",
+  "FilePath": "/home/coder/project/workspace/Authen/Authen.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "6.0",
@@ -18371,7 +18371,7 @@
     ],
     "CSharpLanguageVersion": 1000
   },
-  "RootNamespace": "API",
+  "RootNamespace": "Authen",
   "Documents": [],
   "SerializationFormat": "0.3"
 }
