@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Authen.Models;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using System.IdentityModel.Tokens.Jwt;
 
 namespace Authen.Controllers
 {
@@ -36,9 +37,16 @@ namespace Authen.Controllers
                 var credentials = new SigningCredentials(securitykey, SecurityAlgorithms.HmacSha256);
 
                 // Create Token
+                var token = new JwtSecurityToken(_config["Jwt:Issuer"],_config["Jwt:Audience"],null,expires: DateTime.Now.AddMinutes(1),
+                signingCredentials: credentials);
 
-                var token = new JwtSecurityToken()
+                return new JwtSecurityTokenHandler().WriteToken(token);
             }
+
+            //Login Method
+            [AllowAnonymous]
+            [HttpPost]
+            
         }
     }
 }
