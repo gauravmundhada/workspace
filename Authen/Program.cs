@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
@@ -9,7 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 .AddJwtBearer(options=>
 {
-    options.TokenValidationParameters = new TokenValidationParamters
+    options.TokenValidationParameters = new TokenValidationParameters
     {
         ValidateIssuer=true,
         ValidateAudience=true,
@@ -18,6 +19,13 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         ValidAudience=builder.Configuration["Jwt:Audience"],
         IssuerSigningKey=new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
     };
+});
+
+services.AddAuthorization(options =>
+{
+    options.DefaultPolicy = new AuthorizationPolicyBuilder()
+    .RequireAuthenticatedUser()
+    .Build();
 });
 
 builder.Services.AddControllers();
@@ -39,6 +47,11 @@ app.UseHttpsRedirection();
 app.UseAuthentication();
 
 app.UseAuthorization();
+
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers().RequireAuthorization(); //This line requires authorization by default for all controllers
+});
 
 app.MapControllers();
 
