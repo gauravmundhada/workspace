@@ -9,6 +9,8 @@ using System.Text;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
+using RegisterLogin.ViewModel;
+using Microsoft.AspNetCore.Identity;
 
 namespace Authen.Controllers
 {
@@ -40,7 +42,7 @@ namespace Authen.Controllers
         public async Task<IActionResult> Register([FromBody] RegisterViewModel model)
         {
             // Validate model and create a new user
-            var user = new User { userName = model.userName, emailId = model.emailId };
+            var user = new Users { userName = model.userName, emailId = model.emailId,role };
             var result = await _userManager.CreateAsync(user, model.password);
         
             if (result.Succeeded)
@@ -84,40 +86,43 @@ namespace Authen.Controllers
             }
         }
 
+        private object GenerateToken(IdentityUser user)
+        {
+            throw new NotImplementedException();
+        }
 
         private string GenerateToken(Users users)
+        {
+            var claims = new List<Claim>
             {
-                var claims = new List<Claim>
-                {
-                    new Claim(ClaimTypes.NameIdentifier, user.userId),
-                    new Claim(ClaimTypes.Name, user.userName),
-                    // Add additional claims as needed
-                };
+                new Claim(ClaimTypes.NameIdentifier, users.userId.ToString()),
+                new Claim(ClaimTypes.Name, users.userName),
+                // Add additional claims as needed
+            };
                 
-                var securitykey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
-                var credentials = new SigningCredentials(securitykey, SecurityAlgorithms.HmacSha256);
+            var securitykey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
+            var credentials = new SigningCredentials(securitykey, SecurityAlgorithms.HmacSha256);
 
                 // Create Token
-                var token = new JwtSecurityToken(_config["Jwt:Issuer"],_config["Jwt:Audience"],null,expires: DateTime.Now.AddMinutes(1),
-                signingCredentials: credentials);
+            var token = new JwtSecurityToken(_config["Jwt:Issuer"],_config["Jwt:Audience"],null,expires: DateTime.Now.AddMinutes(1),
+            signingCredentials: credentials);
 
-                return new JwtSecurityTokenHandler().WriteToken(token);
-            }
+            return new JwtSecurityTokenHandler().WriteToken(token);
+        }
 
             //Login Method
-            [AllowAnonymous]
-            [HttpPost]
+            
 
-            public IActionResult Login(Users user)
-            {
-                IActionResult response = Unauthorized();
-                var user_ = AuthenticateUser(user);
-                if(user_ != null)
-                {
-                    var token = GenerateToken(user_);
-                    response = Ok( new { token = token }); 
-                }
-                return response;
-            }
+            // public IActionResult Login(Users user)
+            // {
+            //     IActionResult response = Unauthorized();
+            //     var user_ = AuthenticateUser(user);
+            //     if(user_ != null)
+            //     {
+            //         var token = GenerateToken(user_);
+            //         response = Ok( new { token = token }); 
+            //     }
+            //     return response;
+            // }
+        }
     }
-}
