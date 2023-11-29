@@ -39,10 +39,11 @@ namespace Authen.Controllers
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
         
+        [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] RegisterViewModel model)
         {
             // Validate model and create a new user
-            var user = new Users { userName = model.userName, emailId = model.emailId,role };
+            var user = new Users { userName = model.userName, emailId = model.emailId,role=model.role };
             var result = await _userManager.CreateAsync(user, model.password);
         
             if (result.Succeeded)
@@ -57,6 +58,7 @@ namespace Authen.Controllers
             }
         }
 
+        [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginViewModel model)
         {
             // Find the user by their username or email
