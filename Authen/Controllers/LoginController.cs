@@ -30,9 +30,10 @@ namespace Authen.Controllers
             {
                 _user = new Users{ Username = "Gaurav Mundhada"};
             }
-            return _user;
+            return _user;   
+        }
 
-            private string GenerateToken(Users users)
+        private string GenerateToken(Users users)
             {
                 var securitykey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
                 var credentials = new SigningCredentials(securitykey, SecurityAlgorithms.HmacSha256);
@@ -59,8 +60,5 @@ namespace Authen.Controllers
                 }
                 return response;
             }
-
-            
-        }
     }
 }

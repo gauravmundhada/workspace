@@ -1,5 +1,7 @@
+using Authen.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
@@ -21,11 +23,15 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     };
 });
 
-services.AddAuthorization(options =>
+builder.Services.AddAuthorization(options =>
 {
     options.DefaultPolicy = new AuthorizationPolicyBuilder()
     .RequireAuthenticatedUser()
     .Build();
+});
+
+builder.Services.AddDbContext<ApplicationDbContext>(options=>{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DevConnection"));
 });
 
 builder.Services.AddControllers();
@@ -45,6 +51,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthentication();
+app.UseRouting();
 
 app.UseAuthorization();
 
