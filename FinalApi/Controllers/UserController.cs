@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
+using FinalApi.Models;
 
 namespace FinalApi.Controllers
 {
@@ -16,6 +18,16 @@ namespace FinalApi.Controllers
             _authContext = authContext;
         }
 
-        [HttpPost]
+        [HttpPost("authenticate")]
+        public async Task<IActionResult> Authenticate([FromBody User userObj])
+        {
+            if(userObj == null)
+            {
+                return BadRequest();
+            }
+                var user = await _authContext.Users.FirstOrDefaultAsync(x=>x.Username == userObj.Username);
+                
+        }
+
     }
 }
