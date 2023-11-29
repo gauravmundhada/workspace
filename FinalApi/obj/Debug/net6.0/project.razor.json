@@ -1,6 +1,6 @@
 {
-  "SerializedFilePath": "/home/coder/project/workspace/SportsAcademyJobHiring/obj/Debug/net6.0/project.razor.json",
-  "FilePath": "/home/coder/project/workspace/SportsAcademyJobHiring/SportsAcademyJobHiring.csproj",
+  "SerializedFilePath": "/home/coder/project/workspace/FinalApi/obj/Debug/net6.0/project.razor.json",
+  "FilePath": "/home/coder/project/workspace/FinalApi/FinalApi.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "6.0",
@@ -18371,7 +18371,7 @@
     ],
     "CSharpLanguageVersion": 1000
   },
-  "RootNamespace": "SportsAcademyJobHiring",
+  "RootNamespace": "FinalApi",
   "Documents": [],
   "SerializationFormat": "0.3"
 }
