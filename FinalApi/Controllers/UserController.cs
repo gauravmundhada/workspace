@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using FinalApi.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace FinalApi.Controllers
 {
@@ -25,7 +26,7 @@ namespace FinalApi.Controllers
             {
                 return BadRequest();
             }
-                var user = _authContext.Users.FirstOrDefault(x=>x.Username == userObj.Username && x.Password == userObj.Password);
+                var user = await _authContext.Users.FirstOrDefaultAsync(x=>x.Username == userObj.Username && x.Password == userObj.Password);
                 if(user==null)
                     return NotFound(new { Message = "User Not Found!"});
 
