@@ -59,7 +59,7 @@ namespace FinalApi.Controllers
         private string CreateJwtToken(User user)
         {
             var jwtTokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.UTF8.GetBytes("verysecret..");
+            var key = Encoding.UTF8.GetBytes("verysecret......");
             var identity = new ClaimsIdentity(new Claim[]
                 {
                     new Claim(ClaimTypes.Role, user.Role)
