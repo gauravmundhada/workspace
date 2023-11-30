@@ -35,7 +35,10 @@ namespace FinalApi.Controllers
                 if(user==null)
                     return NotFound(new { Message = "User Not Found!"});
 
+                
+                user.Token = CreateJwtToken(user);
                 return Ok(new{
+                    Token = user.Token,
                     Message = "Login Success!"
                 });
         }
@@ -56,7 +59,7 @@ namespace FinalApi.Controllers
         private string CreateJwtToken(User user)
         {
             var jwtTokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes("verysecret..");
+            var key = Encoding.UTF8.GetBytes("verysecret..");
             var identity = new ClaimsIdentity(new Claim[]
                 {
                     new Claim(ClaimTypes.Role, user.Role)
