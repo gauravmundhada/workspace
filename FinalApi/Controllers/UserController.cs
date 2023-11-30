@@ -78,5 +78,11 @@ namespace FinalApi.Controllers
             return jwtTokenHandler.WriteToken(token);
         }
 
+        [HttpGet]
+        public async Task<ActionResult<User>> GetAllUsers()
+        {
+            return Ok(await _authContext.Users.ToListAsync());
+        }
+
     }
 }
