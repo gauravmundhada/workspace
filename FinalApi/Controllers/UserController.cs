@@ -42,7 +42,7 @@ namespace FinalApi.Controllers
                 return BadRequest();
 
             await _authContext.Users.AddAsync(userObj);
-            _authContext.SaveChangesAsync();
+            await _authContext.SaveChangesAsync();
             return Ok(new{
                 Message="User Registered Successfully!"
             });
