@@ -98,13 +98,22 @@ namespace FinalApi.Controllers
             );
         }
 
-        [HttpGet("getRole/{email}")]
+        [HttpGet("getUserObj/{email}")]
         public async Task<ActionResult<User>> GetRole(string email)
         {
             var user = await _authContext.Users.FirstOrDefaultAsync(x=>x.Email == email);
             //string role = user.Role;
             return Ok(user);
         }
+
+
+        // [HttpGet("getName/{email}")]
+        // public async Task<ActionResult<User>> GetName(string email)
+        // {
+        //     var user = await _authContext.Users.FirstOrDefaultAsync(x=>x.Email == email);
+        //     //string role = user.Role;
+        //     return Ok(user);
+        // }
 
     }
 }
