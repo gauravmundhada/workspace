@@ -37,8 +37,10 @@ namespace FinalApi.Controllers
                     return NotFound(new { Message = "User Not Found!"});
 
                 
-                user.Token = CreateJwtToken(user);
+                
                 HttpContext.Session.SetInt32("UserId", User.Id);
+                user.Token = CreateJwtToken(user);
+                
                 return Ok(new{
                     Token = user.Token,
                     Message = "Login Success!"
@@ -64,7 +66,9 @@ namespace FinalApi.Controllers
             var key = Encoding.UTF8.GetBytes("verysecret......");
             var identity = new ClaimsIdentity(new Claim[]
                 {
-                    new Claim(ClaimTypes.Role, user.Role)
+                    new Claim(ClaimTypes.Role, user.Role),
+                    new Claim(ClaimTypes.NameIdentifier, user.Id)
+                    
                 }
             );
 
