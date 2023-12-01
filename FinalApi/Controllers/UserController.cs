@@ -99,11 +99,11 @@ namespace FinalApi.Controllers
         }
 
         [HttpGet("getRole/{email}")]
-        public async Task<ActionResult<string>> GetRole(string email)
+        public async Task<ActionResult<User>> GetRole(string email)
         {
             var user = await _authContext.Users.FirstOrDefaultAsync(x=>x.Email == email);
-            string role = user.Role;
-            return Ok(role);
+            //string role = user.Role;
+            return Ok(user);
         }
 
     }
