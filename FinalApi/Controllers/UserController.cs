@@ -102,7 +102,7 @@ namespace FinalApi.Controllers
         public async Task<IActionResult> GetRole(string email)
         {
             var user = await _authContext.Users.FirstOrDefaultAsync(x=>x.Email == email);
-            var role = user.Role;
+            string role = user.Role;
             return Ok(role);
         }
 
