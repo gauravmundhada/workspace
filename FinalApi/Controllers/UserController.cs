@@ -37,13 +37,14 @@ namespace FinalApi.Controllers
                     return NotFound(new { Message = "User Not Found!"});
 
                 
-                Console.WriteLine($"User Id before storing in session: {user.Id}");
-                HttpContext.Session.SetInt32("UserId", user.Id);
-                Console.WriteLine($"User Id before storing in session: {HttpContext.Session.GetInt32("UserId")}");
+                // Console.WriteLine($"User Id before storing in session: {user.Id}");
+                // HttpContext.Session.SetInt32("UserId", user.Id);
+               // Console.WriteLine($"User Id before storing in session: {HttpContext.Session.GetInt32("UserId")}");
                 user.Token = CreateJwtToken(user);
                 
                 return Ok(new{
                     Token = user.Token,
+                    //Session = HttpContext.Session.GetInt32("UserId"),
                     Message = "Login Success!"
                 });
         }
@@ -86,13 +87,15 @@ namespace FinalApi.Controllers
             return jwtTokenHandler.WriteToken(token);
         }
 
-        [Authorize]
+       // [Authorize]
         [HttpGet]
         public async Task<ActionResult<User>> GetAllUsers()
         {
-            // var userId = HttpContext.Session.GetInt32("UserId");
+            //var userId = HttpContext.Session.GetInt32("UserId");
             // Console.WriteLine($"User Id retrieved from session: {userId}");
-            return Ok(await _authContext.Users.ToListAsync());
+            return Ok(
+                await _authContext.Users.ToListAsync()
+            );
         }
 
         [HttpGet("getRole/{email}")]
