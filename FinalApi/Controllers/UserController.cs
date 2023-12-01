@@ -38,6 +38,7 @@ namespace FinalApi.Controllers
 
                 
                 user.Token = CreateJwtToken(user);
+                HttpContext.Session.SetInt32("UserId", User.Id);
                 return Ok(new{
                     Token = user.Token,
                     Message = "Login Success!"
@@ -76,6 +77,7 @@ namespace FinalApi.Controllers
                 SigningCredentials = credentials
             };
             var token = jwtTokenHandler.CreateToken(tokenDescriptor);
+            
             return jwtTokenHandler.WriteToken(token);
         }
 
@@ -83,6 +85,7 @@ namespace FinalApi.Controllers
         [HttpGet]
         public async Task<ActionResult<User>> GetAllUsers()
         {
+            var userId = HttpContext.Session.GetInt32("UserId");
             return Ok(await _authContext.Users.ToListAsync());
         }
 
