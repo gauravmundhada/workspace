@@ -37,8 +37,9 @@ namespace FinalApi.Controllers
                     return NotFound(new { Message = "User Not Found!"});
 
                 
-                
-                HttpContext.Session.SetInt32("UserId", User.Id);
+                // Console.WriteLine($"User Id before storing in session: {user.Id}");
+                // HttpContext.Session.SetInt32("UserId", user.Id);
+                // Console.WriteLine($"User Id before storing in session: {HttpContext.Session.GetInt32("UserId")}");
                 user.Token = CreateJwtToken(user);
                 
                 return Ok(new{
@@ -67,7 +68,7 @@ namespace FinalApi.Controllers
             var identity = new ClaimsIdentity(new Claim[]
                 {
                     new Claim(ClaimTypes.Role, user.Role),
-                    new Claim(ClaimTypes.NameIdentifier, user.Id)
+                    new Claim(ClaimTypes.NameIdentifier, user.Id.ToString())
                     
                 }
             );
@@ -89,7 +90,8 @@ namespace FinalApi.Controllers
         [HttpGet]
         public async Task<ActionResult<User>> GetAllUsers()
         {
-            var userId = HttpContext.Session.GetInt32("UserId");
+            // var userId = HttpContext.Session.GetInt32("UserId");
+            // Console.WriteLine($"User Id retrieved from session: {userId}");
             return Ok(await _authContext.Users.ToListAsync());
         }
 
