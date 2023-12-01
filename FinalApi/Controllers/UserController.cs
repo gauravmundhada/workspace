@@ -87,7 +87,7 @@ namespace FinalApi.Controllers
             return jwtTokenHandler.WriteToken(token);
         }
 
-       // [Authorize]
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<User>> GetAllUsers()
         {
